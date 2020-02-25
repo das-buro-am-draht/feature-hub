@@ -1,5 +1,6 @@
 import {ModuleLoader} from '@feature-hub/core';
-import fetch from 'node-fetch';
+import createHttpsProxyAgent from 'https-proxy-agent';
+import fetch, {RequestInit} from 'node-fetch';
 
 export interface Externals {
   readonly [externalName: string]: unknown;
@@ -9,7 +10,13 @@ export function createCommonJsModuleLoader(
   externals: Externals = {}
 ): ModuleLoader {
   return async (url: string): Promise<unknown> => {
-    const response = await fetch(url);
+    const requestInit: RequestInit = {};
+
+    if (process.env.HTTP_PROXY) {
+      requestInit.agent = createHttpsProxyAgent(process.env.HTTP_PROXY);
+    }
+
+    const response = await fetch(url, requestInit);
     const source = await response.text();
     const mod = {exports: {}};
 
