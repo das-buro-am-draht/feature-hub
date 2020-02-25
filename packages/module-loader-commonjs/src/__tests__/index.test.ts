@@ -2,16 +2,23 @@
  * @jest-environment node
  */
 
+import {RequestInfo, RequestInit} from 'node-fetch';
+import ProxyAgent from 'proxy-agent';
 import {createCommonJsModuleLoader, loadCommonJsModule} from '..';
 
 let mockResponse: string;
+let requestUrl: RequestInfo;
+let requestInitOptions: RequestInit;
 
 // tslint:disable promise-function-async
-jest.mock('node-fetch', () => () =>
-  Promise.resolve({
+jest.mock('node-fetch', () => (url: RequestInfo, options: RequestInit) => {
+  requestInitOptions = options;
+  requestUrl = url;
+
+  return Promise.resolve({
     text: () => Promise.resolve(Buffer.from(mockResponse))
-  })
-);
+  });
+});
 // tslint:enable promise-function-async
 
 describe('loadCommonJsModule (on Node.js)', () => {
@@ -51,5 +58,31 @@ describe('createCommonJsModuleLoader', () => {
     const expectedModule = {default: {test: 42}};
 
     expect(loadedModule).toEqual(expectedModule);
+  });
+
+  it('sets agent if process.env.HTTP_PROXY is defined', async () => {
+    const currentHttpProxy = process.env.HTTP_PROXY;
+    const url = 'http://example.com/test.js';
+
+    process.env.HTTP_PROXY = 'http://';
+    mockResponse = `
+			var foo = require('foo');
+			module.exports = {
+				default: {test: foo()}
+			};
+		`;
+
+    const loadCommonJsModuleWithExternals = createCommonJsModuleLoader({
+      foo: () => 42
+    });
+
+    const loadedModule = await loadCommonJsModuleWithExternals(url);
+    const expectedModule = {default: {test: 42}};
+
+    expect(loadedModule).toEqual(expectedModule);
+    expect(requestUrl).toEqual(url);
+    expect(requestInitOptions).toEqual({agent: new ProxyAgent('http://')});
+
+    process.env.HTTP_PROXY = currentHttpProxy;
   });
 });
