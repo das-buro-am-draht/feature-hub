@@ -1,5 +1,5 @@
 {
-  "name": "@feature-hub/serialized-state-manager",
+  "name": "@das-buro-am-draht/serialized-state-manager",
   "version": "2.4.1",
   "description": "A Feature Service for managing the state transfer to the client when rendering on the server.",
   "homepage": "https://feature-hub.io/",

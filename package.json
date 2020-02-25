@@ -1,5 +1,5 @@
 {
-  "name": "feature-hub",
+  "name": "@das-buro-am-draht/feature-hub",
   "private": true,
   "license": "MIT",
   "workspaces": [
@@ -21,15 +21,15 @@
     "verify": "run-p verify:**",
     "verify:format": "prettier --list-different '**/*.{js,json,md,ts,tsx,yml}'",
     "verify:install": "git diff --exit-code yarn.lock",
-    "verify:size-limit": "lerna exec --no-private --ignore @feature-hub/module-loader-commonjs --parallel -- size-limit",
+    "verify:size-limit": "lerna exec --no-private --ignore @das-buro-am-draht/module-loader-commonjs --parallel -- size-limit",
     "preverify:sort-package-jsons": "yarn sort-package-jsons",
     "verify:sort-package-jsons": "git diff --exit-code package.json packages/*/package.json",
     "watch:compile": "lerna exec --parallel -- tsc --project tsconfig.cjs.json --watch --preserveWatchOutput --pretty",
-    "watch:demo": "lerna exec --scope @feature-hub/demos -- ts-node -r tsconfig-paths/register src/watch-demo.ts",
+    "watch:demo": "lerna exec --scope @das-buro-am-draht/demos -- ts-node -r tsconfig-paths/register src/watch-demo.ts",
     "watch:test": "yarn test --watch --no-coverage --no-verbose",
     "watch:test:integration": "yarn watch:test --testPathPattern packages/demos",
     "watch:test:unit": "yarn watch:test --testPathIgnorePatterns packages/demos",
-    "watch:website": "lerna exec --scope @feature-hub/website -- docusaurus-start"
+    "watch:website": "lerna exec --scope @das-buro-am-draht/website -- docusaurus-start"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
