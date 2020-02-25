@@ -1,5 +1,5 @@
 {
-  "name": "@feature-hub/logger",
+  "name": "@das-buro-am-draht/logger",
   "version": "2.4.1",
   "description": "A Feature Service for providing a common logging integration to all Feature Hub consumers.",
   "homepage": "https://feature-hub.io/",

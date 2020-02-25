@@ -1,5 +1,5 @@
 {
-  "name": "@feature-hub/server-request",
+  "name": "@das-buro-am-draht/server-request",
   "version": "2.4.1",
   "description": "A Feature Service that provides a server request to consumers that want to be server-side rendered.",
   "homepage": "https://feature-hub.io/",

@@ -1,5 +1,5 @@
 {
-  "name": "@feature-hub/module-loader-amd",
+  "name": "@das-buro-am-draht/module-loader-amd",
   "version": "2.4.1",
   "description": "A FeatureAppManager-compatible AMD module loader.",
   "homepage": "https://feature-hub.io/",

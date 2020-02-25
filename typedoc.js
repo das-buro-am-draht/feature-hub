@@ -12,8 +12,8 @@ module.exports = {
   gitRevision: 'master',
   ignoreCompilerErrors: false,
   mode: 'modules',
-  name: '@feature-hub',
-  out: 'packages/website/build/feature-hub/@feature-hub',
+  name: '@das-buro-am-draht',
+  out: 'packages/website/build/feature-hub/@das-buro-am-draht',
   readme: 'README.md',
   theme: 'minimal',
   tsconfig: 'tsconfig.json'
