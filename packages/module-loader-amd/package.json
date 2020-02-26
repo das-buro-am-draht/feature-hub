@@ -1,6 +1,6 @@
 {
   "name": "@das-buro-am-draht/module-loader-amd",
-  "version": "2.4.1",
+  "version": "2.6.0",
   "description": "A FeatureAppManager-compatible AMD module loader.",
   "homepage": "https://feature-hub.io/",
   "bugs": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sinnerschrader/feature-hub.git"
+    "url": "https://github.com/das-buro-am-draht/feature-hub.git"
   },
   "license": "MIT",
   "author": "SinnerSchrader Deutschland GmbH",
@@ -29,5 +29,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "2997d94bab16f21912f33bbc3cf87d3e9e91285b"
 }

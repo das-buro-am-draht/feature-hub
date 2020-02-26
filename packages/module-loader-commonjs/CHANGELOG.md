@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/sinnerschrader/feature-hub/compare/v2.5.0...v2.6.0) (2020-02-26)
+
+
+### Features
+
+* **module-loader-commonjs:** add proxy support ([ec7dd92](https://github.com/sinnerschrader/feature-hub/commit/ec7dd92))
+* **module-loader-commonjs:** add proxy support ([d1ddad6](https://github.com/sinnerschrader/feature-hub/commit/d1ddad6))
+
+
+
+
+
 ## [2.4.1](https://github.com/sinnerschrader/feature-hub/compare/v2.4.0...v2.4.1) (2020-02-12)
 
 **Note:** Version bump only for package @feature-hub/module-loader-commonjs

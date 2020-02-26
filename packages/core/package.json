@@ -1,6 +1,6 @@
 {
   "name": "@das-buro-am-draht/core",
-  "version": "2.4.1",
+  "version": "2.6.0",
   "description": "Create scalable web applications using micro frontends.",
   "keywords": [
     "feature-app",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sinnerschrader/feature-hub.git"
+    "url": "https://github.com/das-buro-am-draht/feature-hub.git"
   },
   "license": "MIT",
   "author": "SinnerSchrader Deutschland GmbH",
@@ -37,5 +37,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "2997d94bab16f21912f33bbc3cf87d3e9e91285b"
 }
